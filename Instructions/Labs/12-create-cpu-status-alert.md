@@ -4,7 +4,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
 ## Task 1 - Create an alert when a CPU exceeds an average of 80 percent
 
-1. In the search bar at the top of the Azure portal, type **SQL database (1)** and select **SQL databases (2)**. 
+1. In the Azure Portal search and navigate to the **SQL database (1)** and select **SQL databases (2)**. 
 
     ![Screenshot of selecting a SQL database](../images/sql.png)
  

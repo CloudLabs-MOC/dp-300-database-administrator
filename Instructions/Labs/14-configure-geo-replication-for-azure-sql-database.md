@@ -4,7 +4,7 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 
 ## Task 1 - Enable geo-replication
 
-1. In the Azure portal, navigate to your database by searching for **sql databases**.
+1. In the Azure portal, navigate to your database by searching for **SQL Databases**.
 
     ![Screenshot of searching for existing SQL databases.](../images/dp-300-lab14-02.png)
 
@@ -58,6 +58,8 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 Now that the Azure SQL Database replica is created, you will perform a failover.
 
 1. Navigate to the SQL servers page, and notice the new server in the list. Select the secondary server (you may have a different server name).
+
+    > **Note:** Select that server which you created.
 
     ![Screenshot showing SQL servers page.](../images/lab14-dp-300-L1-1.png)
 
