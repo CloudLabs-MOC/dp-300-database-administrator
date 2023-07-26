@@ -17,7 +17,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 - **Subscription:** Use existing subscription
 - **Resource group:** **contoso-rg-<inject key="DeploymentID" enableCopy="false"/>** **(1)**
 - **Name:** **lab02-vnet** **(2)**
-- **Region:** <inject key="location" enableCopy="false"/> **(3)**
+- **Region:** **(Europe) West Europe** **(3)**
 
     ![Picture 2](../images/upd-dp-300-module-02-lab-05.png)
 
@@ -46,7 +46,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 - **Database Name:** AdventureWorksLT
 - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
 - **Server name:** dp300-lab-<inject key="DeploymentID" enableCopy="false"/> **(1)**
-- **Location:**  <inject key="location" enableCopy="false"/> **(2)**
+- **Location:**  **(Europe) West Europe** **(2)**
 - **Authentication method:** Use SQL authentication **(3)**
 - **Server admin login:** dp300admin **(4)**
 - **Password:** dp300P@ssword! **(5)**
@@ -77,7 +77,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 - **Subscription:**  Use existing subscription
 - **Resource group:**  **contoso-rg-<inject key="DeploymentID" enableCopy="false"/>**
-- **Location:** <inject key="location" enableCopy="false"/>
+- **Location:** **(Europe) West Europe**
 - **Name:** DP-300-SQL-Endpoint **(1)**
 - **Target sub-resource:** SqlServer **(2)**
 - **Virtual network:** lab02-vnet(contoso-rg-<inject key="DeploymentID" enableCopy="false"/>) **(3)**

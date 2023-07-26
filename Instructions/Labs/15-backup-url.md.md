@@ -70,7 +70,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
     az storage account create -n "BACKUP_STORAGE_NAME" -g "RESOURCE_GROUP_NAME" --kind StorageV2 -l eastus2
     ```
 
-    ![Screenshot of the storage account creation prompt on Azure portal.](../images/upd-dp-300-module-15-lab-16.png)
+    ![Screenshot of the storage account creation prompt on Azure portal.](../images/lab-15-task-2-step-7(1).png)
 
 1. Next you will get the keys for your storage account, which you will use in subsequent steps. Execute the following code in Cloud Shell: 
  
@@ -82,7 +82,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     Your account key will be in the results of the above command. Copy the returned value for **key1** (without the double quotes) in a notepad as shown here:
 
-    ![Screenshot of the storage account key on Azure portal.](../images/upd-dp-300-module-15-lab-06.png)
+    ![Screenshot of the storage account key on Azure portal.](../images/lab-15-Task-2-step-8(2).png)
 
 1. Backing up a database in SQL Server to a URL uses container within a storage account. You will create a container specifically for backup storage in this step. To do this, execute the commands below.
 
@@ -94,7 +94,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     The output should return **true**.
 
-    ![Screenshot of the output for the container creation.](../images/upd-dp-300-module-15-lab-07.png)
+    ![Screenshot of the output for the container creation.](../images/lab-15-task-2-step-9.png)
 
 1. To verify if the container backups has been created properly, execute:
 
@@ -104,7 +104,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
    > **NOTE:** Replace BACKUP_STORAGE_NAME with **dp300backupstr<inject key="DeploymentID" enableCopy="false" />** and STORAGE_KEY with the value of **key1** that you have copied in the notepad. The output should return something similar to below:
 
-    ![Screenshot of the container list.](../images/upd-dp-300-module-15-lab-08.png)
+    ![Screenshot of the container list.](../images/lab-15-task-2-step-10.png)
 
 1. A shared access signature (SAS) at the container level is required for security. This can be done via Cloud Shell or PowerShell. Execute the following:
 
@@ -116,7 +116,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     The output should return something similar to below. Copy the whole shared access signature and paste it in **Notepad**, it will be used in the next task.
 
-    ![Screenshot of the shared access signature key.](../images/upd-dp-300-module-15-lab-09.png)
+    ![Screenshot of the shared access signature key.](../images/lab-15-task-2-step-11.png)
 
 ## Task 3 - Create credential
 
@@ -143,11 +143,11 @@ Now that the functionality is configured, you can generate a backup file as a bl
     ```
   
     
-      ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
+      ![Screenshot of the credential on SSMS.](../images/lab-15-task-3-step-2(2).png)
    
 1. You can check if the credential was created successfully by navigating to **Security -> Credentials** on Object Explore.
 
-    ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab-17.png)
+    ![Screenshot of the credential on SSMS.](../images/lab-15-task-3-step-3.png)
 
 1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account. (Only run this command if you need to go back and recreate the credential).  select **New Query**, then paste and execute the following query.
 
@@ -169,7 +169,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
     > **Note:** Replace <storage_account_name> with **dp300backupstr<inject key="DeploymentID" enableCopy="false" />**. The output should return something similar to below.
 
-    ![Screenshot of the backup error.](../images/upd-dp-300-module-15-lab-18.png)
+    ![Screenshot of the backup error.](../images/lab-15-task-4-step-1.png)
 
     If something was configured incorrectly, you will see an error message similar to the following:
 
@@ -191,7 +191,7 @@ To see that the file is actually in Azure, you can use Storage Explorer or Azure
 
     > **NOTE:** Replace BACKUP_STORAGE_NAME with **dp300backupstr<inject key="DeploymentID" enableCopy="false" />** and KEY1 with the value of **key1** that you have copied in the notepad.
 
-    ![Screenshot of the backup in the container.](../images/upd-dp-300-module-15-lab-19.png)
+    ![Screenshot of the backup in the container.](../images/lab-15-task-5-step-2.png)
 
     We can confirm the backup file was generated successfully.
 
@@ -203,19 +203,19 @@ To see that the file is actually in Azure, you can use Storage Explorer or Azure
 
 1. Select the backup storage account name you created for the backups.
 
-   ![Screenshot showing selecting a storage account.](../images/upd-dp-300-module-15.png)
+   ![Screenshot showing selecting a storage account.](../images/lab-15-task-6-step-2.png)
 
 1. In the left navigation, select **Storage browser (1)**. Select **Blob containers (2)**.
 
-    ![Screenshot showing the backed up file in the storage account.](../images/dp300-lab15-backupcontainer.png)
+    ![Screenshot showing the backed up file in the storage account.](../images/lab-15-task-6-step-3.png)
 
 1. Select **backups**.
 
-    ![Screenshot showing the backed up file in the storage account.](../images/upd-dp-300-module-15-lab-13.png)
+    ![Screenshot showing the backed up file in the storage account.](../images/lab-15-task-6-step-4.png)
 
 1. Note that the backup file is stored in the container.
 
-    ![Screenshot showing the backup file on storage browser.](../images/upd-dp-300-module-15-lab-14.png)
+    ![Screenshot showing the backup file on storage browser.](../images/lab-15-task-6-step-5.png)
     
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Click Lab Validation tab located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
@@ -223,7 +223,7 @@ To see that the file is actually in Azure, you can use Storage Explorer or Azure
     > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
   
-## Task 6 - Restore from URL
+## Task 7 - Restore from URL
 
 This task will show you how to restore a database from an Azure blob storage.
 
@@ -274,7 +274,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
      The output should be similar to this:
 
-    ![Screenshot showing the restore database from URL being executed.](../images/upd-dp-300-module-15-lab-20.png)
+    ![Screenshot showing the restore database from URL being executed.](../images/lab-15-task-7-step-4.png)
 
 1. Re-run **Step 1** to verify that the customer name has been restored.
 
